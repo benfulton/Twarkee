@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleTwitter", "TeleTwitter\TeleTwitter.csproj", "{7E0B8248-A6CF-4998-A70C-1C576D389AC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twarkee", "TeleTwitter\Twarkee.csproj", "{7E0B8248-A6CF-4998-A70C-1C576D389AC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleTwitter.Lib", "TeleTwitter.Lib\TeleTwitter.Lib\TeleTwitter.Lib.csproj", "{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}"
 EndProject
