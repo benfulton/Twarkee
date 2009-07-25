@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleTwitter", "TeleTwitter\TeleTwitter.csproj", "{7E0B8248-A6CF-4998-A70C-1C576D389AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleTwitter.Lib", "TeleTwitter.Lib\TeleTwitter.Lib\TeleTwitter.Lib.csproj", "{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.TeleTwitter", "UnitTests.TeleTwitter\UnitTests.TeleTwitter.csproj", "{84EE166E-91E6-4352-8688-FE574853128F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E0B8248-A6CF-4998-A70C-1C576D389AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E0B8248-A6CF-4998-A70C-1C576D389AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E0B8248-A6CF-4998-A70C-1C576D389AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E0B8248-A6CF-4998-A70C-1C576D389AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84EE166E-91E6-4352-8688-FE574853128F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84EE166E-91E6-4352-8688-FE574853128F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84EE166E-91E6-4352-8688-FE574853128F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84EE166E-91E6-4352-8688-FE574853128F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
