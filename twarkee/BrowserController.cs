@@ -156,14 +156,7 @@ namespace Twarkee
 
         public string GetPublicVisibility()
         {
-            if (!Properties.Settings.Default.UsePublicTimeline)
-            {
                 return "none";
-            }
-            else
-            {
-                return "";
-            }
         }
 
         #endregion

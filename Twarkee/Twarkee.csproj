@@ -55,19 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserController.cs" />
-    <Compile Include="DirectMessageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DirectMessageForm.Designer.cs">
-      <DependentUpon>DirectMessageForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HelpForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HelpForm.Designer.cs">
-      <DependentUpon>HelpForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HelpFormController.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,7 +84,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config2" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,17 +94,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="RememberTheMilkManager.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="Settings1.cs" />
     <Compile Include="StatusFormatter.cs" />
     <Compile Include="StringResources.cs" />
-    <Compile Include="ToastForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToastForm.Designer.cs">
-      <DependentUpon>ToastForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VoiceTranslator.cs" />
     <Compile Include="WindowSerializer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -130,18 +108,10 @@
     <EmbeddedResource Include="html\Main.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DirectMessageForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>DirectMessageForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="html\Teletwitter.js" />
     <EmbeddedResource Include="OptionsForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>OptionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToastForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ToastForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowSerializer.resx">
       <DependentUpon>WindowSerializer.cs</DependentUpon>
@@ -156,13 +126,6 @@
     <None Include="Win32Resource.res" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="toast_bg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="HelpForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>HelpForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="html\DirectMessage.html" />
   </ItemGroup>
   <ItemGroup>

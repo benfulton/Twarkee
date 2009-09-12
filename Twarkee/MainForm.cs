@@ -22,8 +22,6 @@ namespace Twarkee
         private BrowserController _controller = new BrowserController();
         private WindowSerializer _windowSerializer = null;
         private TimeSpan _timeRemaining;
-    	private SpeechVoiceSpeakFlags _speechFlags = SpeechVoiceSpeakFlags.SVSFlagsAsync;
-    	private SpVoice _voice;
         private List<Timeline> _timelines = new List<Timeline>();
         private bool _hasUpdates = false;
 
@@ -41,23 +39,6 @@ namespace Twarkee
 
             // Initialize the controls
             InitControls();
-
-            // Init Speech stuff
-            _voice = new SpVoice();
-            _voice.Volume = Settings.Default.VoiceVolume;
-            _voice.Rate = Settings.Default.VoiceRate;
-
-            try
-            {
-                if (!(string.IsNullOrEmpty(Settings.Default.SelectedVoice)) && Settings.Default.SelectedVoice != "Default")
-                {
-                    _voice.Voice = _voice.GetVoices("Name=" + Settings.Default.SelectedVoice, "").Item(0);
-                }
-            }
-            catch
-            {
-                //do nothing, just use the default voice
-            }
 
             notifyIcon.Text = this.Text;
             notifyIcon.Icon = this.Icon;
@@ -118,10 +99,6 @@ namespace Twarkee
 
             // Setup the text box
             _controller.UserNameChanged +=new BrowserController.UserNameChangedHandler(_controller_UserNameChanged);
-
-            // Setup the web browser
-            //webBrowser1.ObjectForScripting = _controller;
-            //webBrowser1.DocumentText = _controller.GetTimelines();
 
             // Initialize the timelines we'll be tracking.
             Timeline t = new Timeline();
@@ -257,20 +234,6 @@ namespace Twarkee
                 form.ShowDialog();
             }
         }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (HelpForm form = new HelpForm())
-            {
-                form.ShowDialog();
-            }
-        }
-
         #endregion
 
         #region Update Status
@@ -324,27 +287,6 @@ namespace Twarkee
 			
             if (_hasUpdates)
 			{
-                if (Settings.Default.PlaySound)
-                {
-                    string path = Path.Combine(Environment.CurrentDirectory, "AgilityOrb.wav");
-                    Sound.Play(path);
-                }
-				if (Settings.Default.VoiceEnabled)
-				{
-
-					//Process text output
-					// - Put items in reverse order
-					// - @username should translate to "Jason Alexander says to Scott Cate"
-					// - pauses between tweets
-					// - phrase URLs differently
-					
-                    //TODO: Fix this to work with the new timeline object model
-                    _voice.Speak(VoiceTranslator.Translate(timeLine, _timelines), _speechFlags);
-				}
-                if (Settings.Default.MinimizeToTray && notifyIcon.Visible)
-                {
-                    ToastForm.ShowToast("There are new tweets!", null, new ToastTargetClickHandler(toastSelect));
-                }
                 _hasUpdates = false;
 			}
 		}
@@ -552,16 +494,6 @@ namespace Twarkee
   //          }
         }
 
-        #endregion
-
-        #region Toast Support
-
-        private void toastSelect(object sender, ToastSelectEventArgs args)
-        {
-            this.Visible = true;
-            this.WindowState = FormWindowState.Normal;
-            notifyIcon.Visible = false;
-        }
         #endregion
 
         private void webBrowser1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
