@@ -31,7 +31,7 @@ namespace Twarkee
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radXmlButton = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radJsonButton = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkStartAtLogin = new System.Windows.Forms.CheckBox();
@@ -81,7 +81,7 @@ namespace Twarkee
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radXmlButton);
+            this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.radJsonButton);
             this.groupBox2.Location = new System.Drawing.Point(2, 209);
             this.groupBox2.Name = "groupBox2";
@@ -90,17 +90,17 @@ namespace Twarkee
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Select API";
             // 
-            // radXmlButton
+            // radioButton1
             // 
-            this.radXmlButton.AutoSize = true;
-            this.radXmlButton.Checked = true;
-            this.radXmlButton.Location = new System.Drawing.Point(132, 42);
-            this.radXmlButton.Name = "radXmlButton";
-            this.radXmlButton.Size = new System.Drawing.Size(47, 17);
-            this.radXmlButton.TabIndex = 1;
-            this.radXmlButton.TabStop = true;
-            this.radXmlButton.Text = "XML";
-            this.radXmlButton.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(132, 42);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(47, 17);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "XML";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radJsonButton
             // 
@@ -316,7 +316,7 @@ namespace Twarkee
         private System.Windows.Forms.CheckBox chkHandlePublicTimeline;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radXmlButton;
+        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radJsonButton;
     }
 }

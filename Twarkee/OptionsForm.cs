@@ -56,12 +56,12 @@ namespace Twarkee
             txtPassword.Text = Properties.Settings.Default.Password;
             txtRefreshDelay.Text = Properties.Settings.Default.RefreshDelay.ToString();
 
-            chkMinimizeToTray.Checked = Properties.Settings.Default.MinimizeToTray;
+            //chkMinimizeToTray.Checked = Properties.Settings.Default.MinimizeToTray;
             chkStartAtLogin.Checked = (((string)Microsoft.Win32.Registry.GetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", "TeleTwitter", "")).Length > 0);
             radJsonButton.Checked = (Properties.Settings.Default.ApiType == (int)TeleTwitter.Lib.ApiType.JSON);
-            radXmlButton.Checked = (Properties.Settings.Default.ApiType == (int)TeleTwitter.Lib.ApiType.XML);
+            //radXmlButton.Checked = (Properties.Settings.Default.ApiType == (int)TeleTwitter.Lib.ApiType.XML);
 
-            chkHandlePublicTimeline.Checked = Properties.Settings.Default.UsePublicTimeline;
+            //chkHandlePublicTimeline.Checked = Properties.Settings.Default.UsePublicTimeline;
 
         }
 
@@ -70,14 +70,14 @@ namespace Twarkee
             Properties.Settings.Default.UserName = txtUserName.Text;
             Properties.Settings.Default.Password = txtPassword.Text;
             Properties.Settings.Default.RefreshDelay = int.Parse(txtRefreshDelay.Text.Trim());
-            Properties.Settings.Default.MinimizeToTray = chkMinimizeToTray.Checked;
+            //Properties.Settings.Default.MinimizeToTray = chkMinimizeToTray.Checked;
 
-            if (Properties.Settings.Default.UsePublicTimeline != chkHandlePublicTimeline.Checked)
-            {
-                MessageBox.Show("Please close and reopen TeleTwitter for your changes to take place.", "Restart TeleTwitter", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //if (Properties.Settings.Default.UsePublicTimeline != chkHandlePublicTimeline.Checked)
+            //{
+            //    MessageBox.Show("Please close and reopen TeleTwitter for your changes to take place.", "Restart TeleTwitter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
 
-            Properties.Settings.Default.UsePublicTimeline = chkHandlePublicTimeline.Checked;
+            //Properties.Settings.Default.UsePublicTimeline = chkHandlePublicTimeline.Checked;
 
             if (chkStartAtLogin.Checked != (((string)Microsoft.Win32.Registry.GetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", "TeleTwitter", "")).Length > 0))
             {

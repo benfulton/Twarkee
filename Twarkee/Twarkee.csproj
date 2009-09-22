@@ -11,7 +11,8 @@
     <AssemblyName>Twarkee</AssemblyName>
     <Win32Resource>
     </Win32Resource>
-    <ApplicationIcon>Twarkee1.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
@@ -91,7 +92,6 @@
     </Compile>
     <Compile Include="Settings1.cs" />
     <Compile Include="StatusFormatter.cs" />
-    <Compile Include="StringResources.cs" />
     <Compile Include="WindowSerializer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -135,9 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Twarkee.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Twarkee1.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

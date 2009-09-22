@@ -43,41 +43,35 @@ namespace Twarkee
             notifyIcon.Text = this.Text;
             notifyIcon.Icon = this.Icon;
 
-            RememberTheMilkRequest.sharedSecret = "ee19a2728ff74946";
-            RememberTheMilkRequest.APIKey = "34ce6586ecb33100b417182d7de1102f";
-
             /*
-            if (Settings.Default.RememberTheMilkReminders)
-            {
-                if (String.IsNullOrEmpty(Settings.Default.RememberTheMilkToken))
-                {
-                    string authPage = new RememberTheMilkManager().GetAuthenticationPage();
-                    System.Diagnostics.Process.Start(authPage);
-                    MessageBox.Show("Authenticate to Remember the Milk?");
-                }
-            }
-             * */
+          RememberTheMilkRequest.sharedSecret = "ee19a2728ff74946";
+           RememberTheMilkRequest.APIKey = "34ce6586ecb33100b417182d7de1102f";
+
+           if (Settings.Default.RememberTheMilkReminders)
+           {
+               if (String.IsNullOrEmpty(Settings.Default.RememberTheMilkToken))
+               {
+                   string authPage = new RememberTheMilkManager().GetAuthenticationPage();
+                   System.Diagnostics.Process.Start(authPage);
+                   MessageBox.Show("Authenticate to Remember the Milk?");
+               }
+           }
+            * */
         }
 
          #region Config/Init Support
 
         private void CheckConfiguration()
         {
-            try
+            // Make sure the user has entered a username and password.
+            if (Settings.Default.UserName == string.Empty || Settings.Default.Password == string.Empty)
             {
-                // Make sure the user has entered a username and password.
-                if (Settings.Default.UserName == string.Empty || Settings.Default.Password == string.Empty)
+                switchTimer.Enabled = false;
+                using (OptionsForm optionsForm = new OptionsForm())
                 {
-                    switchTimer.Enabled = false;
-                    using (OptionsForm optionsForm = new OptionsForm())
-                    {
-                        optionsForm.ShowDialog(this);
-                    }
-                    switchTimer.Enabled = true;
+                    if (optionsForm.ShowDialog(this) == DialogResult.OK)
+                        switchTimer.Enabled = true;
                 }
-            }
-            catch( Exception ex )
-            {
             }
         }
 

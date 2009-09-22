@@ -83,27 +83,6 @@ namespace Twarkee
             return (Properties.Settings.Default.RefreshDelay * 60000).ToString();
         }
 
-
-        public string GetTimelines()
-        {
-            string templateHtml = GetResourceString(StringResources.MainHtmlResource);
-            return ProcessGeneralTemplateVars(templateHtml);
-        }
-
-        public string GetDirectMessageDocument()
-        {
-            string templateHtml = GetResourceString(StringResources.DirectMessageHtmlResource);
-            return ProcessGeneralTemplateVars(templateHtml);
-        }
-
-        private string GetResourceString(string resourceName)
-        {
-            using (StreamReader reader = new StreamReader(this.GetType().Assembly.GetManifestResourceStream(resourceName)))
-            {
-                return reader.ReadToEnd();
-            }
-        }
-
         #endregion
 
         #region Update Methods
@@ -119,22 +98,6 @@ namespace Twarkee
                 return exc.Message;
             }
             return string.Empty;
-        }
-
-        #endregion
-
-        #region Utility Methods
-
-        private string ProcessGeneralTemplateVars(string inputText)
-        {
-            StringBuilder input = new StringBuilder(inputText);
-            // Parse ${css}
-            string css = GetResourceString(StringResources.CssResource);
-            input.Replace("${css}", "<style type=\"text/css\" media=\"all\">" + css + "</style>");
-            // Parse ${javascript}
-            string javascript = GetResourceString(StringResources.JavaScriptResource);
-            input.Replace("${javascript}", "<script language=\"javascript\">" + javascript + "</script>");
-            return input.ToString();
         }
 
         #endregion
