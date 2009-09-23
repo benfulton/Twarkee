@@ -93,13 +93,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="html\Teletwitter.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="html\Main.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="html\Teletwitter.js" />
     <EmbeddedResource Include="OptionsForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>OptionsForm.cs</DependentUpon>
@@ -116,12 +109,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Win32Resource.res" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="html\DirectMessage.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="html\Help.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeleTwitter.Lib\TeleTwitter.Lib\TeleTwitter.Lib.csproj">
