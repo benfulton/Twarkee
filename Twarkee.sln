@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twarkee", "Twarkee\Twarkee.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleTwitter.Lib", "TeleTwitter.Lib\TeleTwitter.Lib\TeleTwitter.Lib.csproj", "{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.TeleTwitter", "UnitTests.TeleTwitter\UnitTests.TeleTwitter.csproj", "{84EE166E-91E6-4352-8688-FE574853128F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,10 +19,6 @@ Global
 		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10713CD4-5EEF-4DF0-B369-EB7F452F0AB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84EE166E-91E6-4352-8688-FE574853128F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84EE166E-91E6-4352-8688-FE574853128F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84EE166E-91E6-4352-8688-FE574853128F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84EE166E-91E6-4352-8688-FE574853128F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

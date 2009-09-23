@@ -5,7 +5,6 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Genghis;
-using SpeechLib;
 using System.Drawing;
 using TeleTwitter.Lib;
 using System.Drawing.Drawing2D;
