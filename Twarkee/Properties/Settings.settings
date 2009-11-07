@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="UserName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">benfulton</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">chakra101_</Value>
     </Setting>
     <Setting Name="RefreshDelay" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>

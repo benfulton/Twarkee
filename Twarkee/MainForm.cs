@@ -23,12 +23,13 @@ namespace Twarkee
         private TimeSpan _timeRemaining;
         private List<Timeline> _timelines = new List<Timeline>();
         private bool _hasUpdates = false;
+        IconCache icons;
 
         public MainForm()
         {
             InitializeComponent();
             _windowSerializer = new WindowSerializer(this);
-            
+            icons = new IconCache();   
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace Twarkee
         	RefreshRemainingCharacters();
         }
 
-        HybridDictionary images = new HybridDictionary();
+        //HybridDictionary images = new HybridDictionary();
 
         private void FindHyperlinks( LinkLabel label )
         {
@@ -156,17 +157,11 @@ namespace Twarkee
             if (statusText.Text.Contains(Settings.Default.UserName))
                 BackColor = Color.Red;
             else if (DateTime.Now - items[i].CreatedAt < new TimeSpan(0, 5, 0))
-                BackColor = Color.FromArgb(0xC5, 0xC5, 0xC5);
+                BackColor = Color.LightGreen;
             else
                 BackColor = Color.FromArgb(27, 34, 40);
 
-            if (images.Contains(usr.ScreenName))
-            {
-                picUser.Image = (Image) images[usr.ScreenName];
-
-            }
-            else
-                picUser.LoadAsync(usr.ProfileImageUrl);
+            icons.LoadInto(picUser, usr.ScreenName, usr.ProfileImageUrl);
         }
 
         #endregion
@@ -231,16 +226,6 @@ namespace Twarkee
 
         #region Update Status
 
-        static void BackUpMessage(string text)
-        {
-            using (StreamWriter streamWriter = new StreamWriter(Path.Combine(Environment.CurrentDirectory, "message.log"), true))
-            {
-                streamWriter.WriteLine("Message sent: " + DateTime.Now);
-                streamWriter.WriteLine(text);
-                streamWriter.WriteLine();
-            }
-        }
-
         void newStatusTextBox_Key(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Return)
@@ -250,7 +235,6 @@ namespace Twarkee
                 if (newStatusTextBox.Text.Length > 2)
                 {
                     string text = newStatusTextBox.Text;
-                    BackUpMessage(text);
                     newStatusTextBox.Clear();
                     newStatusTextBox.Refresh();
                     RefreshRemainingCharacters();
@@ -372,7 +356,7 @@ namespace Twarkee
             foreach (Timeline timeline in _timelines)
             {
                 items = timeline.StatusList;
-                images = new HybridDictionary();
+                icons.Expire();
                 SetContent(timeline.TimelineOutput,timeline.HtmlContainerId, timeline);
                 foreach (Status status in timeline.StatusList)
                 {
@@ -537,7 +521,7 @@ namespace Twarkee
 
         private void switchTimer_Tick(object sender, EventArgs e)
         {
-            images[items[current].User.ScreenName] = picUser.Image;
+            //images[items[current].User.ScreenName] = picUser.Image;
 
             current--;
             if (current < 0) current = items.Count - 1;
@@ -601,42 +585,12 @@ namespace Twarkee
         {
             showUserPage(lblUserName.Text);
         }
+
+        private void picUser_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            icons.FillLastRequest(picUser.Image);
+        }
         
 	}
-    public class Helper
-    {
-        private Helper()
-        {
-        }
 
-        public static GraphicsPath GetRoundRectPath(RectangleF rect, float radius)
-        {
-            return GetRoundRectPath(rect.X, rect.Y, rect.Width, rect.Height, radius);
-        }
-        public static GraphicsPath GetRoundRectPath(float X, float Y, float width, float height, float radius)
-        {
-
-            GraphicsPath gp = new GraphicsPath();
-
-            gp.AddLine(X + radius, Y, X + width - (radius * 2), Y);
-
-            gp.AddArc(X + width - (radius * 2), Y, radius * 2, radius * 2, 270, 90);
-
-            gp.AddLine(X + width, Y + radius, X + width, Y + height - (radius * 2));
-
-            gp.AddArc(X + width - (radius * 2), Y + height - (radius * 2), radius * 2, radius * 2, 0, 90);
-
-            gp.AddLine(X + width - (radius * 2), Y + height, X + radius, Y + height);
-
-            gp.AddArc(X, Y + height - (radius * 2), radius * 2, radius * 2, 90, 90);
-
-            gp.AddLine(X, Y + height - (radius * 2), X, Y + radius);
-
-            gp.AddArc(X, Y, radius * 2, radius * 2, 180, 90);
-
-            gp.CloseFigure();
-
-            return gp;
-        }
-    }
 }

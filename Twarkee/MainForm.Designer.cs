@@ -39,6 +39,7 @@ namespace Twarkee
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.lblCharsLeft = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.statusText = new System.Windows.Forms.LinkLabel();
             this.lblTimeOfPost = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.picUser = new System.Windows.Forms.PictureBox();
@@ -46,7 +47,6 @@ namespace Twarkee
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusText = new System.Windows.Forms.LinkLabel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
@@ -116,6 +116,19 @@ namespace Twarkee
             this.panel1.Size = new System.Drawing.Size(416, 56);
             this.panel1.TabIndex = 7;
             // 
+            // statusText
+            // 
+            this.statusText.ForeColor = System.Drawing.Color.White;
+            this.statusText.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.statusText.LinkColor = System.Drawing.Color.Lime;
+            this.statusText.Location = new System.Drawing.Point(50, 24);
+            this.statusText.Name = "statusText";
+            this.statusText.Size = new System.Drawing.Size(368, 27);
+            this.statusText.TabIndex = 4;
+            this.statusText.Text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+                "ncididunt ut labore et dolore magna aliqua. Ut enim ad min";
+            this.statusText.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.statusText_LinkClicked);
+            // 
             // lblTimeOfPost
             // 
             this.lblTimeOfPost.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +158,7 @@ namespace Twarkee
             this.picUser.Size = new System.Drawing.Size(48, 48);
             this.picUser.TabIndex = 0;
             this.picUser.TabStop = false;
+            this.picUser.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.picUser_LoadCompleted);
             // 
             // switchTimer
             // 
@@ -158,34 +172,21 @@ namespace Twarkee
             this.optionsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(117, 48);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click_1);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // statusText
-            // 
-            this.statusText.ForeColor = System.Drawing.Color.White;
-            this.statusText.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.statusText.LinkColor = System.Drawing.Color.Lime;
-            this.statusText.Location = new System.Drawing.Point(50, 24);
-            this.statusText.Name = "statusText";
-            this.statusText.Size = new System.Drawing.Size(368, 27);
-            this.statusText.TabIndex = 4;
-            this.statusText.Text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
-                "ncididunt ut labore et dolore magna aliqua. Ut enim ad min";
-            this.statusText.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.statusText_LinkClicked);
             // 
             // MainForm
             // 
@@ -201,16 +202,16 @@ namespace Twarkee
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.ShowInTaskbar = false;
-            this.Text = "TeleTwitter";
+            this.Text = "Twarkee";
             this.TopMost = true;
-            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
-            this.Resize += new System.EventHandler(this.MainForm_Resize);
-            this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
-            this.MouseLeave += new System.EventHandler(this.MainForm_MouseLeave);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
+            this.MouseEnter += new System.EventHandler(this.MainForm_MouseEnter);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseLeave += new System.EventHandler(this.MainForm_MouseLeave);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
