@@ -156,6 +156,7 @@ namespace Twarkee
             this.picUser.Location = new System.Drawing.Point(0, 3);
             this.picUser.Name = "picUser";
             this.picUser.Size = new System.Drawing.Size(48, 48);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picUser.TabIndex = 0;
             this.picUser.TabStop = false;
             this.picUser.LoadCompleted += new System.ComponentModel.AsyncCompletedEventHandler(this.picUser_LoadCompleted);
